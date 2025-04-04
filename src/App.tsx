@@ -1,5 +1,14 @@
-import React from 'react';
-import { Brain, Send, Code, Phone, Mail, MapPin, Github, Linkedin } from 'lucide-react';
+import {
+  Brain,
+  Send,
+  Code,
+  Phone,
+  Mail,
+  MapPin,
+  Github,
+  Linkedin,
+} from "lucide-react";
+import Image from "next/image";
 
 function App() {
   return (
@@ -9,13 +18,28 @@ function App() {
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
+              <Image src="./logo.png" alt="logo" width={500} height={500} />
               <Brain className="h-8 w-8 text-emerald-500" />
-              <span className="ml-2 text-2xl font-bold text-gray-800">Cognitia</span>
+              <span className="ml-2 text-2xl font-bold text-gray-800">
+                Cognitia
+              </span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#sobre" className="text-gray-600 hover:text-emerald-500">Sobre</a>
-              <a href="#projetos" className="text-gray-600 hover:text-emerald-500">Projetos</a>
-              <a href="#contato" className="text-gray-600 hover:text-emerald-500">Contato</a>
+              <a href="#sobre" className="text-gray-600 hover:text-emerald-500">
+                Sobre
+              </a>
+              <a
+                href="#projetos"
+                className="text-gray-600 hover:text-emerald-500"
+              >
+                Projetos
+              </a>
+              <a
+                href="#contato"
+                className="text-gray-600 hover:text-emerald-500"
+              >
+                Contato
+              </a>
             </div>
           </div>
         </nav>
@@ -30,16 +54,20 @@ function App() {
                 Transformando ideias em soluções tecnológicas
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Desenvolvemos soluções inovadoras para impulsionar seu negócio no mundo digital.
+                Desenvolvemos soluções inovadoras para impulsionar seu negócio
+                no mundo digital.
               </p>
-              <a href="#contato" className="bg-emerald-500 text-white px-8 py-3 rounded-lg hover:bg-emerald-600 transition-colors">
+              <a
+                href="#contato"
+                className="bg-emerald-500 text-white px-8 py-3 rounded-lg hover:bg-emerald-600 transition-colors"
+              >
                 Fale Conosco
               </a>
             </div>
             <div className="md:w-1/2 mt-12 md:mt-0">
-              <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                alt="Technology Team" 
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Technology Team"
                 className="rounded-lg shadow-xl"
               />
             </div>
@@ -50,20 +78,24 @@ function App() {
       {/* Sobre Section */}
       <section id="sobre" className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Sobre Nós</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+            Sobre Nós
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <Code className="h-12 w-12 text-emerald-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-4">Desenvolvimento</h3>
               <p className="text-gray-600">
-                Criamos soluções personalizadas com as mais recentes tecnologias do mercado.
+                Criamos soluções personalizadas com as mais recentes tecnologias
+                do mercado.
               </p>
             </div>
             <div className="text-center">
               <Brain className="h-12 w-12 text-emerald-500 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-4">Inovação</h3>
               <p className="text-gray-600">
-                Buscamos constantemente novas formas de resolver desafios tecnológicos.
+                Buscamos constantemente novas formas de resolver desafios
+                tecnológicos.
               </p>
             </div>
             <div className="text-center">
@@ -80,11 +112,16 @@ function App() {
       {/* Projetos Section */}
       <section id="projetos" className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Nossos Projetos</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+            Nossos Projetos
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3].map((item) => (
-              <div key={item} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <img 
+              <div
+                key={item}
+                className="bg-white rounded-lg shadow-md overflow-hidden"
+              >
+                <img
                   src={`https://images.unsplash.com/photo-156${item}481615-7f1793d2c903?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80`}
                   alt={`Projeto ${item}`}
                   className="w-full h-48 object-cover"
@@ -92,9 +129,13 @@ function App() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">Projeto {item}</h3>
                   <p className="text-gray-600 mb-4">
-                    Descrição breve do projeto e suas principais características.
+                    Descrição breve do projeto e suas principais
+                    características.
                   </p>
-                  <a href="#" className="text-emerald-500 hover:text-emerald-600">
+                  <a
+                    href="#"
+                    className="text-emerald-500 hover:text-emerald-600"
+                  >
                     Saiba mais →
                   </a>
                 </div>
@@ -107,11 +148,18 @@ function App() {
       {/* Contato Section */}
       <section id="contato" className="py-20 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Entre em Contato</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+            Entre em Contato
+          </h2>
           <div className="max-w-3xl mx-auto">
             <form className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nome</label>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Nome
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -119,7 +167,12 @@ function App() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Email
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -127,7 +180,12 @@ function App() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Mensagem</label>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Mensagem
+                </label>
                 <textarea
                   id="message"
                   rows={4}
@@ -188,7 +246,7 @@ function App() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>© 2024 Cognitia Tecnologia. Todos os direitos reservados.</p>
+            <p>© 2024 Cognitia Tecnologia. Todos os direitos.</p>
           </div>
         </div>
       </footer>

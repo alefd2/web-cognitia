@@ -16,6 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
+      <head>
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href="/logo-without-margins.svg"
+        />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );

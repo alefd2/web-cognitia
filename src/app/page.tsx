@@ -209,7 +209,7 @@ export default function Home() {
                 <input
                   type="text"
                   id="name"
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 transition-colors"
+                  className="mt-1 p-2 block w-full rounded-lg bg-slate-100 border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 transition-colors py-3"
                 />
               </div>
               <div>
@@ -222,7 +222,7 @@ export default function Home() {
                 <input
                   type="email"
                   id="email"
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 transition-colors"
+                  className="mt-1 p-2 block w-full rounded-lg bg-slate-100 border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 transition-colors py-3"
                 />
               </div>
               <div>
@@ -235,7 +235,7 @@ export default function Home() {
                 <textarea
                   id="message"
                   rows={4}
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 transition-colors"
+                  className="mt-1 p-2 block w-full rounded-lg bg-slate-100 border-gray-300 shadow-sm focus:border-emerald-500 focus:ring focus:ring-emerald-200 transition-colors"
                 ></textarea>
               </div>
               <button

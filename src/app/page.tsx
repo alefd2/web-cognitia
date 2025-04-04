@@ -257,8 +257,8 @@ export default function Home() {
             <div>
               <div className="flex items-center mb-4">
                 <Image
-                  src="/logo-full2-smal.png"
-                  width={60}
+                  src="/logo-full2-smal-white.png"
+                  width={180}
                   height={40}
                   alt="logo padrao"
                 />
@@ -273,19 +273,19 @@ export default function Home() {
                 <div className="flex items-center group">
                   <Phone className="h-5 w-5 mr-2 text-emerald-500 group-hover:text-emerald-400 transition-colors" />
                   <span className="group-hover:text-emerald-400 transition-colors">
-                    (11) 9999-9999
+                    (85) 85 998546812
                   </span>
                 </div>
                 <div className="flex items-center group">
                   <Mail className="h-5 w-5 mr-2 text-emerald-500 group-hover:text-emerald-400 transition-colors" />
                   <span className="group-hover:text-emerald-400 transition-colors">
-                    contato@cognitia.com.br
+                    alef.oliveira@cognitia.com.br
                   </span>
                 </div>
                 <div className="flex items-center group">
                   <MapPin className="h-5 w-5 mr-2 text-emerald-500 group-hover:text-emerald-400 transition-colors" />
                   <span className="group-hover:text-emerald-400 transition-colors">
-                    São Paulo, SP
+                    Fortaleza, CE
                   </span>
                 </div>
               </div>

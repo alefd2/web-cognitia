@@ -1,22 +1,34 @@
+// app/blog/[slug]/page.tsx
+"use client";
+
 import { Brain, Calendar, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import ReactMarkdown from "react-markdown";
-import { getPostBySlug } from "../../../lib/notion";
+import { useEffect, useState } from "react";
 
-export const revalidate = 3600; // Revalidate every hour
+export default function BlogPost({ params }: { params: { slug: string } }) {
+  const [post, setPost] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-export default async function BlogPost({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { page, markdown } = await getPostBySlug(params.slug);
-  const properties = page.properties;
-  const coverImage = page.cover?.external?.url || page.cover?.file?.url;
-  const publishDate = properties.Published?.date?.start;
+  useEffect(() => {
+    fetch(`/api/post/${params.slug}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPost(data);
+        setLoading(false);
+      });
+  }, [params.slug]);
+
+  if (loading) return <div className="min-h-screen p-8">Carregando...</div>;
+  if (!post)
+    return <div className="min-h-screen p-8">Post não encontrado.</div>;
+
+  const { page, markdown } = post;
+  const publishDate = page?.createdAt;
+  const coverImage = page?.files;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -25,7 +37,7 @@ export default async function BlogPost({
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center">
-              <Brain className="h-8 w-8 text-emerald-500" />
+              <Image src="/logo.svg" width={60} height={40} alt="logo padrao" />
               <span className="ml-2 text-2xl font-bold text-gray-800">
                 Cognitia
               </span>
@@ -57,7 +69,7 @@ export default async function BlogPost({
           </Link>
 
           <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            {properties.Title.title[0]?.plain_text}
+            {page.title}
           </h1>
 
           <div className="flex items-center text-sm text-gray-500 mb-8">
@@ -71,8 +83,8 @@ export default async function BlogPost({
           {coverImage && (
             <div className="relative h-[400px] w-full mb-8 rounded-lg overflow-hidden">
               <Image
-                src={coverImage}
-                alt={properties.Title.title[0]?.plain_text || ""}
+                src={coverImage.url}
+                alt={coverImage.name || ""}
                 fill
                 className="object-cover"
               />

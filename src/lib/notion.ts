@@ -124,7 +124,7 @@ export async function getAllPublished(): Promise<Post[]> {
 
 export async function getSinglePost(
   slug: string
-): Promise<PostWithMarkdown | null> {
+): Promise<PostWithMarkdown | any> {
   const response = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID!,
     filter: {
@@ -164,7 +164,7 @@ export async function getSinglePost(
   const markdown = n2m.toMarkdownString(mdBlocks)
 
   return {
-    page: post,
+    page: post as Post,
     markdown: markdown.parent,
   }
 }

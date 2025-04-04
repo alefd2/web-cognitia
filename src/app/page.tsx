@@ -18,7 +18,7 @@ export default function Home() {
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <Image src="/logo.png" width={40} height={40} alt="logo padrao" />
+              <Image src="/logo.svg" width={40} height={40} alt="logo padrao" />
               <span className="ml-2 text-2xl font-bold text-gray-800">
                 Cognitia
               </span>
@@ -102,7 +102,7 @@ export default function Home() {
               </p>
             </div>
             <div className="text-center p-6 rounded-lg hover:bg-gray-50 transition-colors">
-              <Image src="/logo.png" width={40} height={40} alt="logo padrao" />
+              <Image src="/logo.svg" width={40} height={40} alt="logo padrao" />
               <h3 className="text-xl font-semibold mb-4">Inovação</h3>
               <p className="text-gray-600">
                 Buscamos constantemente novas formas de resolver desafios

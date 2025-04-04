@@ -17,7 +17,7 @@ export default async function BlogPage() {
         <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center">
-              <Image src="/logo.png" width={40} height={40} alt="logo padrao" />
+              <Image src="/logo.svg" width={40} height={40} alt="logo padrao" />
               <span className="ml-2 text-2xl font-bold text-gray-800">
                 Cognitia
               </span>
@@ -63,6 +63,12 @@ export default async function BlogPage() {
                   <div className="p-6">
                     <div className="flex items-center text-sm text-gray-500 mb-2">
                       <Calendar className="h-4 w-4 mr-2" />
+                      <span>
+                        {format(
+                          new Date(post.createdAt),
+                          "dd 'de' MMMM 'de' yyyy 'às' HH:mm"
+                        )}
+                      </span>
                     </div>
                     <h2 className="text-xl font-semibold text-gray-800 mb-2">
                       {post.title}

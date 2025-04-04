@@ -2,7 +2,7 @@ import { Client } from "@notionhq/client"
 import { NotionToMarkdown } from "notion-to-md"
 
 export const notion = new Client({
-  auth: "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",
+  auth: process.env.NOTION_TOKEN,
 })
 
 export const n2m = new NotionToMarkdown({ notionClient: notion })
